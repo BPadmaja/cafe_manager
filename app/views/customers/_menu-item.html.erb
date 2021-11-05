@@ -1,0 +1,15 @@
+<section class="CategoryContainer">
+  <div class="CategoryTitle">
+    <p class="CategoryTitle-text"><%= category %></p>
+  </div>
+  <ul>
+    <% items.each do |item| %>
+        <li class="MenuItem">
+          <label class="MenuItem-container">
+            <p class="MenuItem-name"><%= item.name %></p>
+            <p class="MenuItem-price"><%= item.price %></p>
+          </label>
+        </li>
+    <% end %>
+  </ul>
+</section>

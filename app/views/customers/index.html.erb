@@ -1,1 +1,7 @@
-<h1> Welcome <%= @current_user.name %>! </h1>
+
+<% Menuitem.category_list.each do |cat| %>
+  <%= render partial: "menu-item", locals: {
+               category: cat,
+               items: Menuitem.category(cat),
+             } %>
+<% end %>

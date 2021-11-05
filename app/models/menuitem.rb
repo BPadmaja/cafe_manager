@@ -1,5 +1,5 @@
 class Menuitem < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :price, presence: true
   validates :cat, presence: true
 

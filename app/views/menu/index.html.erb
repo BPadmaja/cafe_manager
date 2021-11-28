@@ -1,0 +1,21 @@
+
+
+<main class="MenuMain">
+    <article>
+      <h1 class="MenuPage-title">Menu</h1>
+      <%= form_with(url: "/menu", method: "post", class: "AddMenu") do %>
+          <%= text_field_tag "name", nil, class: "MenuName", placeholder: "Menu name" %>
+          <%= text_field_tag "category", nil, class: "MenuCategory", placeholder: "Menu cat" %>
+          <%= text_field_tag "price", nil, class: "MenuPrice", placeholder: "5.50" %>
+          <%= submit_tag "Add", class: "Add-button" %>
+      <% end %>
+      <% Menuitem.category_list.each do |cat| %>
+      <%= render partial: "menu-item", locals: {
+                   category: cat,
+                   items: Menuitem.category(cat),
+                 } %>
+      <% end %>
+
+      <%= link_to "Go back", owners_path %>
+    </article>
+</main>

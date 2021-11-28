@@ -10,4 +10,8 @@ class Menuitem < ApplicationRecord
   def self.category_list
     distinct.pluck(:cat)
   end
+
+  def self.increment
+    self.qty += 1
+  end
 end

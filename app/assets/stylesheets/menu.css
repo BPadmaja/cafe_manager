@@ -37,3 +37,59 @@
   padding:10px;
   font-size:24px;
 }
+
+
+.MenuMain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MenuPage-title{
+  font-size: 20px;
+  line-height: 1.6;
+  color: #453C52;
+  font-weight: 600;
+  margin-bottom: 12px;
+
+}
+
+
+.AddMenu{
+  display: flex;
+  height: 32px;
+  align-items: stretch;
+  margin-bottom: 24px;
+
+}
+
+.MenuName{
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #726A7E;
+  border: 1px solid #BFB8CC;
+  border-radius: 4px;
+  margin-right: 10px;
+
+}
+
+.MenuCategory , .MenuPrice{
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #726A7E;
+  margin-right: 10px;
+  border: 1px solid #BFB8CC;
+  border-radius: 4px;
+
+}
+
+
+.Add-button{
+  font-size: 14px;
+  color: white;
+  background-color:#48BB78;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 6px 22px;
+
+}

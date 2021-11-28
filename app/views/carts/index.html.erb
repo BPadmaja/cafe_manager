@@ -1,0 +1,30 @@
+
+<% if @cart.count > 0 %>
+  <section class="CartContainer">
+    <ul>
+      <li class="MenuItem">
+        <label class="CartItem-container">
+          <p class="CartItemHeder">Name</p>
+          <p class="CartItemHeder">Quantity</p>
+          <p class="CartItemHeder">Price</p>
+        </label>
+      </li>
+    </ul>
+    <ul>
+      <% @cart.each do |item| %>
+          <li class="MenuItem">
+            <label class="MenuItem-container">
+              <p class="MenuItem-price"><%= item.name %></p>
+              <p class="MenuItem-price"><%= item.qty %></p>
+              <p class="MenuItem-price"><%= item.price %></p>
+            </label>
+          </li>
+      <% end %>
+    </ul>
+  </section>
+<% else %>
+  <p> Your cart is empty! </p>
+<% end %>
+
+<p style="margin-bottom:50px;"></p>
+<%= link_to "Go back", customers_path %>

@@ -8,7 +8,7 @@
           <label class="MenuItem-container">
             <p class="MenuItem-name"><%= item.name %></p>
             <p class="MenuItem-price"><%= item.price %></p>
-            <%= form_with(url: "/customers", method: "post", class: "AddItem") do |f| %>
+            <%= form_with(url: "/carts", method: "post", class: "AddItem") do |f| %>
               <%= f.hidden_field :id, value: item.id %>
               <%= submit_tag "Add To Cart", class: "AddItem-button" %>
           <% end %>

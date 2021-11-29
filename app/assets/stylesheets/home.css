@@ -25,3 +25,18 @@
   font-size:16px;
 
 }
+
+.BackLink{
+  margin-top:100px;
+  text-align:center;
+  float:center;
+  font-size:20px;
+}
+
+.PlaceLink{
+  margin-top:50px;
+  text-align:center;
+  float:right;
+  font-size:20px;
+  margin-bottom:70px;
+}

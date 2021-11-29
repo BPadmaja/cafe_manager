@@ -8,7 +8,6 @@ class CartsController < ApplicationController
     item = Cart.find_item(params[:id])
     if item
       item.update_attribute(:qty, item.qty + 1)
-      item.update_attribute(:price, item.price + item.price)
     else
       menuitem = Menuitem.find(params[:id])
       new_cart = Cart.create!(
@@ -20,5 +19,27 @@ class CartsController < ApplicationController
       )
     end
     redirect_to customers_path
+  end
+
+  def add
+    item = Cart.find(params[:id])
+    item.update_attribute(:qty, item.qty + 1)
+    redirect_to carts_path
+  end
+
+  def remove
+    item = Cart.find(params[:id])
+    if item.qty > 1
+      item.update_attribute(:qty, item.qty - 1)
+    else
+      item.destroy
+    end
+    redirect_to carts_path
+  end
+
+  def destroy
+    item = Cart.find(params[:id])
+    item.destroy
+    redirect_to carts_path
   end
 end

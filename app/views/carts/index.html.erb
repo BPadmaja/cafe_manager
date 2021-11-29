@@ -11,20 +11,24 @@
       </li>
     </ul>
     <ul>
-      <% @cart.each do |item| %>
+      <% @cart.order(:name).each do |item| %>
           <li class="MenuItem">
             <label class="MenuItem-container">
               <p class="MenuItem-price"><%= item.name %></p>
+              <%= button_to "-", { :controller => "carts", :action => "remove", :id => item.id }, :method => :post, class: "CartButton" %>
               <p class="MenuItem-price"><%= item.qty %></p>
-              <p class="MenuItem-price"><%= item.price %></p>
+              <%= button_to "+", { :controller => "carts", :action => "add", :id => item.id }, :method => :post, class: "CartButton" %>
+              <p class="MenuItem-price"><%= item.price * item.qty %></p>
+              <%= button_to "X", { :controller => "carts", :action => "destroy", :id => item.id }, :method => :delete, class: "CartButton" %>
             </label>
           </li>
       <% end %>
     </ul>
   </section>
+  <p class="PlaceLink"><%= link_to "Place Order", customers_path %></p>
 <% else %>
-  <p> Your cart is empty! </p>
+  <p style="font-size:24px;"> Your cart is empty! </p>
 <% end %>
 
-<p style="margin-bottom:50px;"></p>
-<%= link_to "Go back", customers_path %>
+
+<p class="BackLink"><%= link_to "Go back", customers_path %></p>

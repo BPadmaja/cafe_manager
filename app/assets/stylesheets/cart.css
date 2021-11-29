@@ -9,3 +9,13 @@
   border-radius:10px;
   justify-content:space-between;
 }
+
+.CartButton{
+  font-size:16px;
+  border:0px;
+  padding:2px 6px;
+  background:#f0b581;
+  color:#b05d13;
+  margin:0px 8px;
+  justify-content:space-between;
+}

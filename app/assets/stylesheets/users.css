@@ -56,3 +56,18 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
+
+.OwnerTitle{
+  font-size:20px;
+  text-align:center;
+  margin:20px;
+  margin-bottom:50px;
+}
+
+
+.OwnerPageLink{
+  padding:20px;
+  font-size:18px;
+
+
+}

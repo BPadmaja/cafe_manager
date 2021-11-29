@@ -1,0 +1,19 @@
+
+<section class="CartContainer">
+
+  <%= render partial: "order-cat", locals: {
+               category: "Pending",
+               orders: Order.where("status=?", "Placed"),
+             } %>
+
+  <%= render partial: "order-cat", locals: {
+               category: "Delivered",
+               orders: Order.where("status=?", "Delivered"),
+             } %>
+
+</ul>
+</section>
+
+
+
+<p class="BackLink"><%= link_to "Go back", owners_path %></p>

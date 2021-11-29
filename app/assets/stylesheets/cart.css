@@ -19,3 +19,11 @@
   margin:0px 8px;
   justify-content:space-between;
 }
+
+.Total{
+  display:block;
+  float:right;
+  font-size:18px;
+  padding:20px;
+  margin-bottom:50px;
+}

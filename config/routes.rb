@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   resources :owners
   resources :menu
   resources :carts
+  resources :orders
 
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions
   delete "/signout" => "sessions#destroy", as: :destroy_session
   post "/carts/add" => "carts#add"
   post "/carts/remove" => "carts#remove"
+  get "orders/placed/" => "orders#placed", as: :placed_order
 end

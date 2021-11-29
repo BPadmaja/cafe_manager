@@ -25,7 +25,9 @@
       <% end %>
     </ul>
   </section>
-  <p class="PlaceLink"><%= link_to "Place Order", customers_path %></p>
+  <p class="Total">Total: <%= @cart.sum("qty*price") %></p>
+  <br>
+  <p class="PlaceLink"><%= link_to "Place Order", new_order_path %></p>
 <% else %>
   <p style="font-size:24px;"> Your cart is empty! </p>
 <% end %>

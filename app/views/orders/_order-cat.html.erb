@@ -1,0 +1,20 @@
+<section class="CategoryContainer">
+  <div class="CategoryTitle">
+    <p class="CategoryTitle-text"><%= orders.count > 0 ? "" : "No" %> <%= category %> Orders</p>
+  </div>
+  <ul>
+    <% orders.each do |order| %>
+        <li class="MenuItem">
+          <label class="MenuItem-container">
+            <p class="MenuItem-price"><%= order.id %></p>
+        <p class="MenuItem-price"><%= User.find(order.user_id).email %></p>
+        <p class="MenuItem-price"><%= order.status %></p>
+        <%= form_with(url: "/orders", method: "post", class: "AddItem") do |f| %>
+          <%= f.hidden_field :id, value: order.id %>
+          <%= submit_tag "Mark as Delivered", class: "AddItem-button" %>
+      <% end %>
+          </label>
+        </li>
+    <% end %>
+  </ul>
+</section>
